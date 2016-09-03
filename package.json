@@ -1,0 +1,22 @@
+{
+  "name": "lottoappapi",
+  "version": "1.0.0",
+  "description": "api server for the lottoApp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byverdu/lottoApp-api.git"
+  },
+  "author": "Albert Vallverdu <byverdu@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byverdu/lottoApp-api/issues"
+  },
+  "homepage": "https://github.com/byverdu/lottoApp-api#readme",
+  "dependencies": {
+    "hapi": "^15.0.3"
+  }
+}
