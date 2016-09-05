@@ -9,5 +9,10 @@ module.exports = [
     method: 'GET',
     path: '/primitiva',
     handler: controller.getPrimitiva
+  },
+  {
+    method: 'GET',
+    path: '/bonoloto',
+    handler: controller.getBonoloto
   }
 ];

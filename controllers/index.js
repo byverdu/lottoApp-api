@@ -16,5 +16,13 @@ module.exports = {
           primitiva: response
         });
       });
+  },
+  getBonoloto: ( request, reply ) => {
+    utils.findBonoloto()
+      .then(( response ) => {
+        reply({
+          bonoloto: response
+        });
+      });
   }
 };

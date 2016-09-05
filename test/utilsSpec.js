@@ -38,4 +38,19 @@ describe( 'Utils service', () => {
         });
     });
   });
+  describe( 'Has a findBonoloto method', () => {
+    it( 'is defined', () => {
+      expect( utils.findBonoloto ).not.eq( undefined );
+    });
+    it( 'returns the bonoloto object', () => {
+      utils.findBonoloto()
+        .then(( response ) => {
+          expect( response ).to.be.an( 'Object' );
+          expect( response ).to.have.property( 'lottoID' ).and.eql( 'bonoloto' );
+          expect( response ).to.have.property( 'allResults' )
+            .to.be.an( 'Array' )
+            .and.length.above( 5 );
+        });
+    });
+  });
 });
