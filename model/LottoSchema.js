@@ -16,4 +16,4 @@ const LottoSchema = new mongoose.Schema({
   }
 });
 
-export default LottoSchema;
+module.exports = mongoose.model( 'Lotto', LottoSchema );
