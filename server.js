@@ -1,27 +1,12 @@
 const Hapi = require( 'hapi' );
 const corsHeaders = require( 'hapi-cors-headers' );
 const config = require( './config' );
-const utils = require( './utils' );
+const routes = require( './routes' );
 require( './database' );
 
-// Create a server with a host and port
 const server = new Hapi.Server();
 server.connection( config.server );
-
-// Add the route
-server.route({
-  method: 'GET',
-  path: '/lottos',
-  handler: ( request, reply ) => {
-    utils.findAllLottosId()
-      .then(( response ) => {
-        reply({
-          lottos: response
-        });
-      });
-  }
-});
-
+server.route( routes );
 server.ext( 'onPreResponse', corsHeaders );
 
 // Start the server
