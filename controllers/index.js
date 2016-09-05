@@ -24,5 +24,13 @@ module.exports = {
           bonoloto: response
         });
       });
+  },
+  getEuromillions: ( request, reply ) => {
+    utils.findEuromillions()
+      .then(( response ) => {
+        reply({
+          euromillions: response
+        });
+      });
   }
 };

@@ -43,5 +43,19 @@ module.exports = {
         }
       });
     });
+  },
+  findEuromillions: () => {
+    return new Promise(( resolve, reject ) => {
+      Lotto.findOne({ lottoID: 'euromillions' }, ( error, lotto ) => {
+        if ( error ) {
+          throw new Error( `${error}` );
+        }
+        if ( lotto !== null ) {
+          resolve( lotto );
+        } else {
+          reject( 'Promise failed' );
+        }
+      });
+    });
   }
 };

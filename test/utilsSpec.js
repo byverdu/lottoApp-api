@@ -53,4 +53,19 @@ describe( 'Utils service', () => {
         });
     });
   });
+  describe( 'Has a findEuromillions method', () => {
+    it( 'is defined', () => {
+      expect( utils.findEuromillions ).not.eq( undefined );
+    });
+    it( 'returns the euromilions object', () => {
+      utils.findEuromillions()
+        .then(( response ) => {
+          expect( response ).to.be.an( 'Object' );
+          expect( response ).to.have.property( 'lottoID' ).and.eql( 'euromilions' );
+          expect( response ).to.have.property( 'allResults' )
+            .to.be.an( 'Array' )
+            .and.length.above( 5 );
+        });
+    });
+  });
 });
