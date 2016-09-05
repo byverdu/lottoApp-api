@@ -1,28 +1,21 @@
-const Hapi = require('hapi');
+const Hapi = require( 'hapi' );
+const corsHeaders = require( 'hapi-cors-headers' );
+const config = require( './config' );
 
 // Create a server with a host and port
 const server = new Hapi.Server();
-server.connection({
-  host: '192.168.0.8',
-  port: 8000,
-  routes: {
-    cors: {
-      headers: [
-        'Access-Control-Allow-Origin', 'Accept', 'Content-Type', 'If-None-Match', 'Accept-language'
-      ]
-    }
-  }
-});
+server.connection( config.server );
 
 // Add the route
 server.route({
-    method: 'GET',
-    path:'/hello',
-    handler: function (request, reply) {
-
-        return reply({'xoxo': 'patata loca'});
-    }
+  method: 'GET',
+  path: '/lottos',
+  handler: ( request, reply ) => {
+    reply({ xoxo: 'patata xoxo' });
+  }
 });
+
+server.ext( 'onPreResponse', corsHeaders );
 
 // Start the server
 server.start((err) => {
