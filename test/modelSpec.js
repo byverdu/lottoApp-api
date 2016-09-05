@@ -23,7 +23,6 @@ after( done => {
 });
 
 describe( 'Model Schema', () => {
-
   describe( 'DB connection', () => {
     it( 'The connection or db name is lottoApp', () => {
       expect( connection.name ).eq( 'lottoApp' );
@@ -33,6 +32,32 @@ describe( 'Model Schema', () => {
     });
     it( 'The collection name is lottos', () => {
       expect( connection.collections.lottos.collectionName ).eq( 'lottos' );
+    });
+  });
+  describe( 'Lotto Schema', () => {
+    it( 'Lottos has a lottoID property', () => {
+      expect( lotto ).to.have.property( 'lottoID' );
+    });
+    it( 'Lottos has a date property', () => {
+      expect( lotto ).to.have.property( 'date' );
+    });
+    it( 'Lottos has a lastResult property', () => {
+      expect( lotto ).to.have.property( 'lastResult' );
+    });
+    it( 'Lottos has a extras property', () => {
+      expect( lotto ).to.have.property( 'extras' );
+    });
+    it( 'Lottos has a mostRepeated property', () => {
+      expect( lotto ).to.have.property( 'mostRepeated' );
+    });
+    it( 'Lottos has a statistics property', () => {
+      expect( lotto ).to.have.property( 'statistics' );
+    });
+    it( 'Lottos has a allResults property', () => {
+      expect( lotto ).to.have.property( 'allResults' );
+    });
+    it( 'Lottos has a stars property', () => {
+      expect( lotto ).to.have.property( 'stars' );
     });
   });
 });
