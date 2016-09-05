@@ -23,4 +23,19 @@ describe( 'Utils service', () => {
         });
     });
   });
+  describe( 'Has a findPrimitiva method', () => {
+    it( 'is defined', () => {
+      expect( utils.findPrimitiva ).not.eq( undefined );
+    });
+    it( 'returns the primitiva object', () => {
+      utils.findPrimitiva()
+        .then(( response ) => {
+          expect( response ).to.be.an( 'Object' );
+          expect( response ).to.have.property( 'lottoID' ).and.eql( 'primitiva' );
+          expect( response ).to.have.property( 'allResults' )
+            .to.be.an( 'Array' )
+            .and.length.above( 5 );
+        });
+    });
+  });
 });

@@ -15,5 +15,19 @@ module.exports = {
         }
       });
     });
+  },
+  findPrimitiva: () => {
+    return new Promise(( resolve, reject ) => {
+      Lotto.findOne({ lottoID: 'primitiva' }, ( error, lotto ) => {
+        if ( error ) {
+          throw new Error( `${error}` );
+        }
+        if ( lotto !== null ) {
+          resolve( lotto );
+        } else {
+          reject( 'Promise failed' );
+        }
+      });
+    });
   }
 };

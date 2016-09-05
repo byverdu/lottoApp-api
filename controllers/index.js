@@ -8,5 +8,13 @@ module.exports = {
           lottos: response
         });
       });
+  },
+  getPrimitiva: ( request, reply ) => {
+    utils.findPrimitiva()
+      .then(( response ) => {
+        reply({
+          primitiva: response
+        });
+      });
   }
 };
