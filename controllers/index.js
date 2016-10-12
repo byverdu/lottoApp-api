@@ -37,7 +37,7 @@ module.exports = {
     utils.findPrimiWinners()
       .then(( response ) => {
         reply({
-          primiWinners: response
+          primitivaWinner: response
         });
       });
   },
@@ -45,7 +45,7 @@ module.exports = {
     utils.findBonoWinners()
       .then(( response ) => {
         reply({
-          bonoWinners: response
+          bonolotoWinner: response
         });
       });
   },
@@ -53,7 +53,7 @@ module.exports = {
     utils.findEuroWinners()
       .then(( response ) => {
         reply({
-          euroWinners: response
+          euromillionsWinner: response
         });
       });
   }
