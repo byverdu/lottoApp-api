@@ -40,5 +40,13 @@ module.exports = {
           primiWinners: response
         });
       });
+  },
+  getBonoWinners: ( request, reply ) => {
+    utils.findBonoWinners()
+      .then(( response ) => {
+        reply({
+          bonoWinners: response
+        });
+      });
   }
 };

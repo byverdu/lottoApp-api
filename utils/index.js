@@ -72,5 +72,19 @@ module.exports = {
         }
       });
     });
+  },
+  findBonoWinners() {
+    return new Promise(( resolve, reject ) => {
+      Winners.findOne({ lottoID: 'bonolotoWinner' }, ( error, winner ) => {
+        if ( error ) {
+          throw new Error( `${error}` );
+        }
+        if ( winner !== null ) {
+          resolve( winner );
+        } else {
+          reject( 'Promise failed' );
+        }
+      });
+    });
   }
 };
