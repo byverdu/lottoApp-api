@@ -32,5 +32,13 @@ module.exports = {
           euromillions: response
         });
       });
+  },
+  getPrimiWinners: ( request, reply ) => {
+    utils.findPrimiWinners()
+      .then(( response ) => {
+        reply({
+          primiWinners: response
+        });
+      });
   }
 };

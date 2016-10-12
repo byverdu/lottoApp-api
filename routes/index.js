@@ -19,5 +19,10 @@ module.exports = [
     method: 'GET',
     path: '/euromillions',
     handler: controller.getEuromillions
+  },
+  {
+    method: 'GET',
+    path: '/primiWinners',
+    handler: controller.getPrimiWinners
   }
 ];

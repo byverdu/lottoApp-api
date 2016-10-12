@@ -1,7 +1,8 @@
 const Lotto = require( '../model/LottoSchema' );
+const Winners = require( '../model/WinnerSchema' );
 
 module.exports = {
-  findAllLottosId: () => {
+  findAllLottosId() {
     return new Promise(( resolve, reject ) => {
       Lotto.find(( error, lottos ) => {
         if ( error ) {
@@ -16,7 +17,7 @@ module.exports = {
       });
     });
   },
-  findPrimitiva: () => {
+  findPrimitiva() {
     return new Promise(( resolve, reject ) => {
       Lotto.findOne({ lottoID: 'primitiva' }, ( error, lotto ) => {
         if ( error ) {
@@ -30,7 +31,7 @@ module.exports = {
       });
     });
   },
-  findBonoloto: () => {
+  findBonoloto() {
     return new Promise(( resolve, reject ) => {
       Lotto.findOne({ lottoID: 'bonoloto' }, ( error, lotto ) => {
         if ( error ) {
@@ -44,7 +45,7 @@ module.exports = {
       });
     });
   },
-  findEuromillions: () => {
+  findEuromillions() {
     return new Promise(( resolve, reject ) => {
       Lotto.findOne({ lottoID: 'euromillions' }, ( error, lotto ) => {
         if ( error ) {
@@ -52,6 +53,20 @@ module.exports = {
         }
         if ( lotto !== null ) {
           resolve( lotto );
+        } else {
+          reject( 'Promise failed' );
+        }
+      });
+    });
+  },
+  findPrimiWinners() {
+    return new Promise(( resolve, reject ) => {
+      Winners.findOne({ lottoID: 'primitivaWinner' }, ( error, winner ) => {
+        if ( error ) {
+          throw new Error( `${error}` );
+        }
+        if ( winner !== null ) {
+          resolve( winner );
         } else {
           reject( 'Promise failed' );
         }
