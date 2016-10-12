@@ -48,5 +48,13 @@ module.exports = {
           bonoWinners: response
         });
       });
+  },
+  getEuroWinners: ( request, reply ) => {
+    utils.findEuroWinners()
+      .then(( response ) => {
+        reply({
+          euroWinners: response
+        });
+      });
   }
 };

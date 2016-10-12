@@ -86,5 +86,19 @@ module.exports = {
         }
       });
     });
+  },
+  findEuroWinners() {
+    return new Promise(( resolve, reject ) => {
+      Winners.findOne({ lottoID: 'euromillionsWinner' }, ( error, winner ) => {
+        if ( error ) {
+          throw new Error( `${error}` );
+        }
+        if ( winner !== null ) {
+          resolve( winner );
+        } else {
+          reject( 'Promise failed' );
+        }
+      });
+    });
   }
 };
