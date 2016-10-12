@@ -22,17 +22,17 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/primiWinners',
+    path: '/primitivaWinner',
     handler: controller.getPrimiWinners
   },
   {
     method: 'GET',
-    path: '/bonoWinners',
+    path: '/bonolotoWinner',
     handler: controller.getBonoWinners
   },
   {
     method: 'GET',
-    path: '/euroWinners',
+    path: '/euromillionsWinner',
     handler: controller.getEuroWinners
   }
 ];
