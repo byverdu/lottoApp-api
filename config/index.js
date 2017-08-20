@@ -4,7 +4,7 @@ module.exports = {
     port: 3800
   },
   database: {
-    testUrl: 'mongodb://localhost/lottoApp',
-    liveUrl: process.env.MONGO_LOTTO_URL
+    development: 'mongodb://localhost/lottoApp',
+    production: process.env.MONGO_LOTTO_URL
   }
 };
