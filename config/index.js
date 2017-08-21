@@ -1,7 +1,7 @@
 module.exports = {
   server: {
     host: 'localhost',
-    port: 3800
+    port: 3000
   },
   database: {
     development: 'mongodb://localhost/lottoApp',
