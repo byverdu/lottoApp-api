@@ -21,6 +21,7 @@
   "dependencies": {
     "babel": "^6.5.2",
     "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.24.1",
     "hapi": "^16.5.0",
     "hapi-cors-headers": "^1.0.0",
     "mongodb-uri": "^0.9.7",
